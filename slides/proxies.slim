@@ -1,0 +1,25 @@
+h2 Proxies
+
+== hl_code :javascript
+  | function numericArray() {
+      var obj = [];
+
+      return new Proxy(obj, {
+        set: function(target, name, value) {
+          if (typeof value === 'number') {
+            obj[name] = value;
+
+          } else {
+            throw new TypeError('Only numbers are allowed.');
+          }
+        }
+      });
+    }
+
+== hl_code :javascript
+  | var a = numericArray();
+
+    a[0] = 0
+
+    a[1] = '1'
+    // TypeError: Only numbers are allowed.

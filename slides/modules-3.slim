@@ -1,0 +1,16 @@
+h2 Modules
+
+p Selective imports:
+== hl_code :javascript
+  | import { sanitize, escape } from html;
+
+p Aliases:
+== hl_code :javascript
+  | import { html as awesome } from 'lib/awesome';
+    import { html as pretty } from 'lib/pretty';
+
+p Inline modules:
+== hl_code :javascript
+  | module "foo" {
+        export let x = 42;
+    }

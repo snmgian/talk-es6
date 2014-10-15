@@ -1,0 +1,19 @@
+h2 Array comprehensions
+
+p Mapping:
+== hl_code :javascript
+  | let squares = [ n * n for(n of [1, 2, 3, 4]) ]
+    // => [1, 4, 9, 16]
+
+p Filtering:
+== hl_code :javascript
+  | let evens = [ n for (n of [1, 2, 3, 4]) if (n % 2 === 0) ]
+    // => [2, 4]
+
+p Cartesian product:
+== hl_code :javascript
+  | let product = [ [n, alpha] for (n of [1, 2]) for (alpha of ['a', 'b', 'c']) ]
+    // => [
+    //      [1, 'a'], [1, 'b'], [1, 'c'],
+    //      [2, 'a'], [2, 'b'], [2, 'c']
+    //    ]

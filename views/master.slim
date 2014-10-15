@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title = title
+    meta name="keywords" content=topic
+    meta name="author" content=author
+
+    / link href="/css/rainbow/dreamweaver.css" rel="stylesheet" type="text/css"
+    link href="/css/rainbow/github.css" rel="stylesheet" type="text/css"
+    / link href="/css/rainbow/pastie.css" rel="stylesheet" type="text/css"
+    / link href="/css/rainbow/tricolore.css" rel="stylesheet" type="text/css"
+
+    link href="/css/talk.css" rel="stylesheet" type="text/css"
+
+    javascript:
+      // alert('Slim supports embedded javascript!')
+
+  body
+    article.presentation
+      section.slide#content
+        Loading ...
+
+        pre
+          code data-language="javascript"
+            |
+              var getHtml = function(url, cb) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.onload = function(e) {
+                  if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                      cb(xhr.responseText);
+                    } else {
+                      cb(undefined, Error('Failure, status = ' + xhr.statusText));
+                    }
+                  }
+                };
+
+                xhr.onerror = function(e) {
+                  cb(undefined, Error('Failure, status = ' + xhr.statusText));
+                };
+
+                xhr.send(null);
+              };
+
+    script src="/js/rainbow/rainbow.min.js"
+    script src="/js/rainbow/language/generic.js"
+    script src="/js/rainbow/language/javascript.js"
+
+    / script src="/js/main.js"
+    / script src="/js/main-promises.js"
+    script src="/js/main-async.js"

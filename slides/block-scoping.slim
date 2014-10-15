@@ -1,0 +1,17 @@
+h2 Block scoping
+
+== hl_code :javascript
+  | var scope = 'outer';
+
+    for (let i = 0; i < 10; i++) {
+      let scope = 'inner';
+
+      console.log(scope + ' i: ' + i);
+      // inner i: 1 ...
+    }
+
+    console.log(typeof(i));
+    // => undefined
+
+    console.log(scope)
+    // => outer

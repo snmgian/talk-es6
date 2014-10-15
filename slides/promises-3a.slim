@@ -1,0 +1,15 @@
+h2 Promises
+
+p Synchronous
+
+== hl_code :javascript
+  | try {
+      var html = getHtmlSync('/slides/1');
+    } catch(e) {
+      console.log("Failed!", error);
+    }
+
+    if (typeof(html) !== 'undefined') {
+      var $content = document.querySelector('#content');
+      $content.innerHTML = html;
+    }

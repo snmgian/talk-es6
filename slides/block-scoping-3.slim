@@ -1,0 +1,16 @@
+h2 Block scoping
+
+p Block scoping, ES 5.
+
+== hl_code :javascript
+  | function() {
+      var cached = undefined;
+
+      return function strongComputation() {
+        if (typeof(cached) === 'undefined') {
+          console.log('please wait ...');
+          cached = 1;
+        }
+        return cached;
+      }
+    }();

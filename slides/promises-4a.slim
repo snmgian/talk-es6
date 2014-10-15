@@ -1,0 +1,24 @@
+h2 Promises
+
+p Synchronous handling:
+
+== hl_code :javascript
+  | try {
+      var html = getHtmlSync('/slides/1');
+      var $content = document.querySelector('#content');
+
+      $content.innerHTML = html;
+    } catch(e) {
+      console.log("Failed!", e);
+    }
+
+p Aynchronous handling:
+
+== hl_code :javascript
+  | getHtml('/slides/1').then(function(html) {
+      var $content = document.querySelector('#content');
+      content.innerHTML = html;
+
+    }).catch(function(e) {
+      console.log("Failed!", e);
+    });

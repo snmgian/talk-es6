@@ -1,0 +1,18 @@
+h2 Block scoping
+
+== hl_code :javascript
+  | {
+      let cached = undefined;
+
+      function strongComputation() {
+        if (typeof(cached) === 'undefined') {
+          console.log('please wait ...');
+          cached = 1;
+        }
+        return cached;
+      }
+    }
+
+    [strongComputation(), strongComputation()]
+    // please wait ...
+    // => [1, 1]

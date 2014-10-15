@@ -1,0 +1,24 @@
+h2 Generators
+
+== hl_code :javascript
+  | function* gen() {
+      console.log('init');
+      yield 1;
+      console.log('resuming after step 1')
+      yield 2;
+      console.log('resuming after step 2')
+      return 3;
+    }
+
+    var g = gen();
+    g.next();
+    // init
+    // => { value: 1, done: false }
+
+    g.next();
+    // resuming after step 1
+    // => { value: 2, done: false }
+
+    g.next();
+    // resuming after step 2
+    // => { value: 3, done: true }

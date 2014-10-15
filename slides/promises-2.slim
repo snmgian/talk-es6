@@ -1,0 +1,18 @@
+h2 Promises
+
+== hl_code :javascript
+  | function getHtml(url) {
+      return new Promise(function(fullfil, reject) {
+        var request;
+        // ...
+
+        req.onload = function() {
+          // ...
+          fullfill(req.response)
+        };
+
+        req.onerror = function() {
+          reject(Error('Network error'));
+        }
+      });
+    }

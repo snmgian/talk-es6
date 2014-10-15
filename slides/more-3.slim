@@ -1,0 +1,19 @@
+h2 More
+
+p Tail arguments:
+== hl_code :javascript
+  | function sum(...n) {
+      let result = 0;
+
+      for (let x of n) result += x;
+
+      return result;
+    }
+
+p Spread operator:
+== hl_code :javascript
+  | function sayHello(title, name) {
+      return `Hello ${ title } ${ name }.`;
+    }
+
+    sayHello(...['Mr', 'Joe']);

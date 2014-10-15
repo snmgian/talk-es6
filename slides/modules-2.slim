@@ -1,0 +1,18 @@
+h2 Modules
+
+== hl_code :javascript
+  | // m.js
+    function somePrivateMethod() {
+      return '%&/=%=$@$%$Q';
+    }
+
+    export function somePublicMethod() {
+      console.log(somePrivateMethod());
+      return 'Nice to meet you!';
+    }
+
+== hl_code :javascript
+  | // app.js
+    import * as M from 'm';
+
+    M.somePrivateMethod();

@@ -1,0 +1,24 @@
+h2 Modules
+
+p Module pattern:
+
+== hl_code :javascript
+  | // m.js
+    var M = (function() {
+      var somePrivateMethod = function() {
+        return '%&/=%=$@$%$Q';
+      };
+
+      var somePublicMethod = function() {
+        console.log(somePrivateMethod());
+        return 'Nice to meet you!';
+      };
+
+      return {
+        somePublicMethod: somePublicMethod
+      }
+    })();
+
+== hl_code :javascript
+  | // app.js
+    M.somePublicMethod();

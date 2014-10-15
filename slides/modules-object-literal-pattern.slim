@@ -1,0 +1,16 @@
+h2 Modules
+
+p Object literal pattern:
+
+== hl_code :javascript
+  | // m.js
+    var M = {
+      somePublicMethod: function() {
+        return 'Nice to meet you!';
+      }
+    };
+
+== hl_code :javascript
+  | // app.js
+    M.somePublicMethod();
+    // => 'Nice to meet you!'

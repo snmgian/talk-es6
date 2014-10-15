@@ -1,0 +1,17 @@
+h2 More
+
+p Symbols, primitive unique values:
+== hl_code :javascript
+  | let cached = Symbol()
+
+    // ...
+    someObj[cached] = 42
+
+p Default parameter values:
+== hl_code :javascript
+  | function next(i = 0) {
+      return i + 1;
+    }
+
+    next();  // => 1
+    next(6); // => 7

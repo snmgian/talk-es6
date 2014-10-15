@@ -1,0 +1,15 @@
+h2 Arrow functions
+
+ul
+  li Anonymous functions.
+  li
+    em this
+    |  is bound to its containing scope.
+  li No prototype, can't act as constructors.
+  li
+    em return
+    |  don't needed.
+
+== hl_code :javascript
+  | _.map([1, 2, 3],
+          i => i % 2 === 0);

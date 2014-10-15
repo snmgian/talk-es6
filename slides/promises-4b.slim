@@ -1,0 +1,12 @@
+h2 Promises
+
+p Aynchronous
+
+== hl_code :javascript
+  | getHtml('/slides/1').then(function(html) {
+      var $content = document.querySelector('#content');
+      content.innerHTML = html;
+
+    }).catch(function(error) {
+      console.log("Failed!", error);
+    });

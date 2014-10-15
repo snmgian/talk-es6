@@ -1,0 +1,17 @@
+h2 Bonus - Generators + Promises
+
+p Synchronous version:
+
+== hl_code :javascript
+  | var gotoPage = function(page) {
+      try {
+        var html = getHtmlSync('/slides/' + page);
+        var $content = document.querySelector('#content');
+
+        $content.innerHTML = html;
+
+      } catch(e) {
+        console.log('ERROR Retrieving page ' + page);
+        console.log(e);
+      }
+    });

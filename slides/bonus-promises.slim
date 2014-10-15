@@ -1,0 +1,16 @@
+h2 Bonus - Generators + Promises
+
+p Promises/A+ version:
+
+== hl_code :javascript
+  | var gotoPage = function(page) {
+      getHtml('/slides/' + page).then(function(html) {
+        var $content = document.querySelector('#content');
+
+        $content.innerHTML = html;
+
+      }).catch(function(e) {
+        console.log('ERROR Retrieving page ' + page);
+        console.log(e);
+      });
+    };

@@ -1,0 +1,15 @@
+h2 Bonus - Generators + Promises
+
+p Generators + Promises version:
+
+== hl_code :javascript
+  | var gotoPage = async(function* (page) {
+      try {
+        var html = yield getHtml('/slides/' + page);
+
+        $content.innerHTML = html;
+      } catch(e) {
+        console.log('ERROR Retrieving slide ' + page);
+        console.log(e);
+      }
+    });

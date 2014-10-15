@@ -1,0 +1,16 @@
+h2 Generators
+
+== hl_code :javascript
+  | function* naturals() {
+      let i = 0;
+      while(true) {
+        yield ++i;
+      }
+    }
+
+    var n = naturals();
+    n.next()
+    # => { value: 1, done: false }
+
+    n.next()
+    # => { value: 2, done: false }

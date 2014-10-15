@@ -1,0 +1,21 @@
+h2 Bonus - Generators + Promises
+
+p Async heaven:
+== hl_code :javascript
+  |  var getPage = async(function* (page) {
+       try {
+         var html = yield getCachedPage(page);
+
+         if (typeof html === 'undefined') {
+           html = yield getHtml('/slides/' + page);
+         }
+
+         putHtmlIntoDocument(html);
+
+         yield cachePage(page, html);
+         console.debug('Page ' + page + ' saved.');
+
+       } catch(e) {
+          console.error(e);
+       }
+     });

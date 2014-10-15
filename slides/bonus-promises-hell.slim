@@ -1,0 +1,21 @@
+h2 Bonus - Generators + Promises
+
+p Promises hell:
+== hl_code :javascript
+  |  function getPage(page) {
+       getCachedPage(page).then(function(html) {
+         putHtmlIntoDocument(html);
+       }, function() {
+         // page not cached yet.
+
+         getHtml('/slides/' + page).then(function(html) {
+           putHtmlIntoDocument(html);
+           return cachePage(page, html);
+         }).then(function() {
+           console.debug('Page ' + page + ' saved.');
+         }
+
+       }).catch(e) {
+         console.error(e);
+       });
+     }

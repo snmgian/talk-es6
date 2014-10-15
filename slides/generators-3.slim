@@ -1,0 +1,25 @@
+h2 Generators
+
+== hl_code :javascript
+  | function* cat() {
+      let input;
+
+      while(true) {
+        input = yield(input);
+
+        if (input === 'Bye') {
+          return 'Bye';
+        }
+      }
+    }
+
+== hl_code :javascript
+  | var c = cat();
+
+    c.next(); // => { value: undefined, done: false }
+
+    c.next('Hi'); // => { value: 'Hi', done: false }
+
+    n.next('How are you?'); // => { value: 'How are you?', done: false }
+
+    n.next('Bye'); // => { value: 'Bye', done: true }
